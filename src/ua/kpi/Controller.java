@@ -9,8 +9,8 @@ import java.util.Random;
 
 public class Controller {
 
-    Model model;
-    View view;
+    private Model model;
+    private View view;
 
     //Constructor
     public Controller(Model model, View view) {
@@ -31,11 +31,10 @@ public class Controller {
         do {
             num = inputOnlyInt(sc);
         }
-        while (!checkCorrectNum(num, sc) || !compareNums(num));
+        while (!checkCorrectNum(num) || !compareNums(num));
     }
 
-
-    private boolean checkCorrectNum(int num, Scanner sc) {
+    private boolean checkCorrectNum(int num) {
             return num >= model.getPrevNum() && num <= model.getNextNum();
     }
 
