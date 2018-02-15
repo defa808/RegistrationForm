@@ -1,7 +1,8 @@
+package Tests;
+
 import junit.framework.Assert;
 import org.junit.Test;
 import ua.kpi.*;
-
 public class MyGameTests {
 
     @Test
