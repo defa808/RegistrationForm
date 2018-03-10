@@ -1,5 +1,10 @@
-package ua.kpi;
+package ua.kpi.Model;
 
+import ua.kpi.Model.Address;
+import ua.kpi.Model.GroupSubscriber;
+/**
+ * Created by Gavriliak on 14.02.2018.
+ */
 public class Subscriber {
     private String surname;
     private String name;
@@ -12,6 +17,21 @@ public class Subscriber {
     private String eMail;
     private String skype;
     private Address address;
+
+    public Subscriber() {
+        name = "";
+        surname = "";
+        patronymic = "";
+        nickName = "";
+        group = null;
+        homeNumber = "";
+        mobileNumber = "";
+        mobileNumber2 = "";
+        eMail = "";
+        skype = "";
+        address = null;
+
+    }
 
     Subscriber(String name, String surname, String patronymic, String nickName, GroupSubscriber group, String homeNumber,
                String mobileNumber, String mobileNumber2, String eMail, String skype, Address address) {

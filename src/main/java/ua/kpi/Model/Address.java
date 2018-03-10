@@ -1,17 +1,19 @@
-package ua.kpi;
+package ua.kpi.Model;
+
+import java.util.Scanner;
 
 /**
  * Created by Gavriliak on 09.03.2018.
  */
 
 public class Address {
-    private int index;
+    private String index;
     private String cityOfResidence;
     private String street;
     private String houseNumber;
     private String apartmentNumber;
 
-    public Address(int index, String cityOfResidence, String street, String houseNumber, String apartmentNumber) {
+    public Address(String index, String cityOfResidence, String street, String houseNumber, String apartmentNumber) {
         this.index = index;
         this.cityOfResidence = cityOfResidence;
         this.street = street;
@@ -33,7 +35,7 @@ public class Address {
     //////////
     //Getters
     /////////
-    public int getIndex() {
+    public String getIndex() {
         return index;
     }
 
@@ -56,7 +58,7 @@ public class Address {
     //////////
     //Setters
     //////////
-    public void setIndex(int index) {
+    public void setIndex(String index) {
         this.index = index;
     }
 

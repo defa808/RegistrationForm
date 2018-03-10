@@ -33,16 +33,18 @@ public class View {
     public static final String WRONG_INPUT__EMAIL = "input.wrong.email";
     public static final String INPUT_SKYPE = "input.skype";
     public static final String INPUT_ADDRESS_INDEX = "input.address.index";
+    public static final String WRONG_INPUT_NUMBER = "input.wrong.number";
     public static final String INPUT_CITY_RESIDENCE = "input.address.city.residence";
     public static final String INPUT_STREET = "input.address.street";
-    public static final String INPUT_HOUSE_NUMBER= "input.address.house.number";
+    public static final String INPUT_HOUSE_NUMBER = "input.address.house.number";
     public static final String INPUT_APARTMENT_NUMBER = "input.address.apartment.number";
+    public static final String INPUT_COMMENT = "input.comment";
 
 
-    public void printMessage(String... messages){
+    public void printMessage(String... messages) {
         StringBuilder concatString = new StringBuilder();
-        for(String v : messages) {
-            concatString = concatString.append(v);
+        for (String v : messages) {
+            concatString = concatString.append(bundle.getString(v));
         }
         String message = new String(concatString);
         System.out.println(message);

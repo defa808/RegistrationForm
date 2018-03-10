@@ -1,4 +1,4 @@
-package ua.kpi;
+package ua.kpi.Model;
 
 import java.util.Date;
 import java.util.List;
@@ -10,6 +10,7 @@ import java.util.List;
 public class Record {
 
     public static List<Record> bookNotes;
+
     private Subscriber author;
     private String comment;
     private Date dateCreation;
@@ -21,6 +22,7 @@ public class Record {
         this.comment = comment;
         this.dateCreation = new Date();
         this.dateEditing = new Date();
+        bookNotes.add(this);
     }
 
     public String getComment() {
