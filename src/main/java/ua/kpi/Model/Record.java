@@ -1,5 +1,8 @@
 package ua.kpi.Model;
 
+import ua.kpi.Exceptions.DataBaseException;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,29 +12,67 @@ import java.util.List;
 
 public class Record {
 
-    public static List<Record> bookNotes;
+    public static ArrayList<Record> bookNotes = new ArrayList<Record>();
 
     private Subscriber author;
-    private String comment;
     private Date dateCreation;
     private Date dateEditing;
 
 
-    public Record(Subscriber author, String comment) {
+    public Record(Subscriber author) {
         this.author = author;
-        this.comment = comment;
         this.dateCreation = new Date();
         this.dateEditing = new Date();
-        bookNotes.add(this);
     }
 
-    public String getComment() {
-        return comment;
+    public Subscriber getAuthor() {
+        return author;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setAuthor(Subscriber author) {
+        this.author = author;
         this.dateEditing = new Date();
     }
 
+    public static void addRecord(Record item)throws DataBaseException{
+
+        if(item == null){
+            throw new NullPointerException("Null pointer Exception");
+        }
+
+        for(Record r : bookNotes){
+            if(item.getAuthor().getNickName().equals(r.getAuthor().getNickName())){
+                throw new DataBaseException("This nickname has already taken");
+            }
+        }
+
+        bookNotes.add(item);
+    }
+
+
+    public Date getDateCreation() {
+        return dateCreation;
+    }
+
+    public void setDateCreation(Date dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+
+    public Date getDateEditing() {
+        return dateEditing;
+    }
+
+    public void setDateEditing(Date dateEditing) {
+        this.dateEditing = dateEditing;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Record{" +
+                "author=" + author +
+                ", dateCreation=" + dateCreation +
+                ", dateEditing=" + dateEditing +
+                '}';
+    }
 }

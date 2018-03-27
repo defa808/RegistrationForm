@@ -50,7 +50,7 @@ public class Subscriber {
 
     @Override
     public String toString() {
-        return surname + ' ' + name.charAt(0) + '.';
+        return surname + ' ' + name.charAt(0) + '.' + " - " + nickName;
     }
 
     public String getSurname() {

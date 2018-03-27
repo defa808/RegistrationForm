@@ -41,7 +41,7 @@ public class View {
     public static final String INPUT_COMMENT = "input.comment";
 
 
-    public void printMessage(String... messages) {
+    static public void printMessage(String... messages) {
         StringBuilder concatString = new StringBuilder();
         for (String v : messages) {
             concatString = concatString.append(bundle.getString(v));
@@ -50,4 +50,12 @@ public class View {
         System.out.println(message);
     }
 
+    static public String getMessage(String ... messages){
+        StringBuilder concatString = new StringBuilder();
+        for (String v : messages) {
+            concatString = concatString.append(bundle.getString(v));
+        }
+        String message = new String(concatString);
+        return message;
+    }
 }

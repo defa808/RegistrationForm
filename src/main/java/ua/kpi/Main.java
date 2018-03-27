@@ -12,5 +12,6 @@ public class Main {
         Controller controller = new Controller(view);
         // Run
         controller.processUser();
+        controller.processUser();
     }
 }
